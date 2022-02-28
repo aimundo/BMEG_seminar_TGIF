@@ -40,6 +40,7 @@
 
 
 
+
 class: title-slide, right, top
 
 .center[
@@ -53,6 +54,16 @@ Department of Biomedical Engineering &lt;br /&gt; University of Arkansas &lt;br&
 ]
 
 ---
+
+layout: true
+
+&lt;a class="footer-link" href="https://tinyurl.com/2p88nk7w"&gt;tinyurl.com/2p88nk7w &amp;mdash; Ariel Mundo&lt;/a&gt;
+
+&lt;!-- this adds the link footer to all slides, depends on footer-link class in css--&gt;
+
+
+---
+
 class: center
 This talk is based on work from our lab. Preprint is available in _bioRxiv_ &lt;br&gt;
 https://doi.org/10.1101/2021.06.10.447970 
@@ -75,7 +86,8 @@ https://github.com/aimundo/GAMs-biomedical-research &lt;br&gt;
 
 &lt;br&gt;
 The slides of this talk are available at &lt;br&gt;
-[tinyurl.com/m75rupjd](https://tinyurl.com/m75rupjd)
+[tinyurl.com/2p88nk7w](https://tinyurl.com/2p88nk7w)
+
 
 ---
 
@@ -105,7 +117,7 @@ The slides of this talk are available at &lt;br&gt;
 
 #### What we tend to do in Biomedical Research:
 
-&lt;img src="img/arrow.jpg" width="300" style="position: fixed; right: 20px; bottom:20px;"&gt;
+&lt;img src="img/arrow.jpg" width="300" style="position: fixed; right: 20px; bottom:50px;"&gt;
 
 --
 
@@ -456,11 +468,11 @@ Andrew Stark &lt;br&gt;
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script src="macros.js"></script>
 <script>var slideshow = remark.create({
-"slideNumberFormat": "%current%",
 "highlightStyle": "github",
 "highlightLines": true,
 "ratio": "16:9",
-"countIncrementalSlides": false
+"countIncrementalSlides": false,
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

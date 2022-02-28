@@ -13,14 +13,16 @@ output:
       - css/mytheme-fonts.css
     seal: false
     nature:
-      slideNumberFormat: "%current%"
       highlightStyle: github
       highlightLines: true
       ratio: 16:9
       countIncrementalSlides: FALSE
       beforeInit: "macros.js"
-    #includes:
-     # after_body: [slides/]
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
 ---
 
 ```{r meta, echo=FALSE, warning=FALSE}
@@ -41,6 +43,7 @@ meta() %>%
     twitter_creator = "@amundortiz"
   )
 ```
+
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
@@ -74,7 +77,6 @@ xaringanExtra::use_share_again()
 xaringanExtra::style_share_again(
   share_buttons = c("twitter","linkedin")
 )
-
 ```
 
 
@@ -91,6 +93,16 @@ class: title-slide, right, top
 ]
 
 ---
+
+layout: true
+
+<a class="footer-link" href="https://tinyurl.com/2p88nk7w">tinyurl.com/2p88nk7w &mdash; Ariel Mundo</a>
+
+<!-- this adds the link footer to all slides, depends on footer-link class in css-->
+
+
+---
+
 class: center
 This talk is based on work from our lab. Preprint is available in _bioRxiv_ <br>
 https://doi.org/10.1101/2021.06.10.447970 
@@ -113,7 +125,8 @@ https://github.com/aimundo/GAMs-biomedical-research <br>
 
 <br>
 The slides of this talk are available at <br>
-[tinyurl.com/m75rupjd](https://tinyurl.com/m75rupjd)
+[tinyurl.com/2p88nk7w](https://tinyurl.com/2p88nk7w)
+
 
 ---
 
@@ -143,7 +156,7 @@ The slides of this talk are available at <br>
 
 #### What we tend to do in Biomedical Research:
 
-<img src="img/arrow.jpg" width="300" style="position: fixed; right: 20px; bottom:20px;">
+<img src="img/arrow.jpg" width="300" style="position: fixed; right: 20px; bottom:50px;">
 
 --
 
