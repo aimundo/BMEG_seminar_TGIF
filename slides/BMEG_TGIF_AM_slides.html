@@ -4,8 +4,8 @@
     <title>Generalized additive models for non-linear longitudinal biomedical data</title>
     <meta charset="utf-8" />
     <meta name="author" content="Ariel Mundo" />
-    <script src="RMedicine2021_slides_files/header-attrs/header-attrs.js"></script>
-    <link href="RMedicine2021_slides_files/remark-css/default.css" rel="stylesheet" />
+    <script src="BMEG_TGIF_AM_slides_files/header-attrs/header-attrs.js"></script>
+    <link href="BMEG_TGIF_AM_slides_files/remark-css/default.css" rel="stylesheet" />
     <meta name="description" content="Generalized additive models for biomedical longitudinal data"/>
     <meta name="generator" content="xaringan and remark.js"/>
     <meta name="github-repo" content="aimundo/BMEG_seminar_TGIF"/>
@@ -19,15 +19,15 @@
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Ariel Mundo"/>
-    <link href="RMedicine2021_slides_files/panelset/panelset.css" rel="stylesheet" />
-    <script src="RMedicine2021_slides_files/panelset/panelset.js"></script>
-    <link href="RMedicine2021_slides_files/tile-view/tile-view.css" rel="stylesheet" />
-    <script src="RMedicine2021_slides_files/tile-view/tile-view.js"></script>
-    <script src="RMedicine2021_slides_files/clipboard/clipboard.min.js"></script>
-    <link href="RMedicine2021_slides_files/shareon/shareon.min.css" rel="stylesheet" />
-    <script src="RMedicine2021_slides_files/shareon/shareon.min.js"></script>
-    <link href="RMedicine2021_slides_files/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
-    <script src="RMedicine2021_slides_files/xaringanExtra-shareagain/shareagain.js"></script>
+    <link href="BMEG_TGIF_AM_slides_files/panelset/panelset.css" rel="stylesheet" />
+    <script src="BMEG_TGIF_AM_slides_files/panelset/panelset.js"></script>
+    <link href="BMEG_TGIF_AM_slides_files/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="BMEG_TGIF_AM_slides_files/tile-view/tile-view.js"></script>
+    <script src="BMEG_TGIF_AM_slides_files/clipboard/clipboard.min.js"></script>
+    <link href="BMEG_TGIF_AM_slides_files/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="BMEG_TGIF_AM_slides_files/shareon/shareon.min.js"></script>
+    <link href="BMEG_TGIF_AM_slides_files/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="BMEG_TGIF_AM_slides_files/xaringanExtra-shareagain/shareagain.js"></script>
     <link rel="stylesheet" href="css/mytheme.css" type="text/css" />
     <link rel="stylesheet" href="css/mytheme-fonts.css" type="text/css" />
   </head>
@@ -127,12 +127,12 @@ The slides of this talk are available at &lt;br&gt;
 - Simulation is useful here because we can only get a mean value from the paper. 
 --
 .pull-left[
-&lt;img src="RMedicine2021_slides_files/figure-html/data-plot-1.png" width="504" /&gt;
+&lt;img src="BMEG_TGIF_AM_slides_files/figure-html/data-plot-1.png" width="504" /&gt;
 ]
 
 --
 .pull-right[
-&lt;img src="RMedicine2021_slides_files/figure-html/simulated-data-1.png" width="504" /&gt;
+&lt;img src="BMEG_TGIF_AM_slides_files/figure-html/simulated-data-1.png" width="504" /&gt;
 ]
 
 ---
@@ -198,7 +198,7 @@ contrast(a)
 .panel[.panel-name[Plot]
 
 .pull-left[
-&lt;img src="RMedicine2021_slides_files/figure-html/rm-ANOVA plot-1.png" width="504" /&gt;
+&lt;img src="BMEG_TGIF_AM_slides_files/figure-html/rm-ANOVA plot-1.png" width="504" /&gt;
 ]
 
 .pull-right[
@@ -306,7 +306,7 @@ The change of `\(y_{ijt}\)` over time is represented by the _smooth function_ `\
 ---
 # An alternative: GAMs
 
-&lt;img src="RMedicine2021_slides_files/figure-html/basis-functions-plot-1.png" width="864" style="display: block; margin: auto;" /&gt;
+&lt;img src="BMEG_TGIF_AM_slides_files/figure-html/basis-functions-plot-1.png" width="864" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -324,20 +324,18 @@ gam1 &lt;- gam(Vol_sim ~ Group+s(Day, by = Group, k = 10),
 
 .panel[.panel-name[Plot]
 
-&lt;img src="RMedicine2021_slides_files/figure-html/GAM-plot-1.png" width="504" style="display: block; margin: auto;" /&gt;
+&lt;img src="BMEG_TGIF_AM_slides_files/figure-html/GAM-plot-1.png" width="504" style="display: block; margin: auto;" /&gt;
 
 ]
 
 .panel[.panel-name[Pairwise comp.]
 
 .pull-left[
-&lt;img src="RMedicine2021_slides_files/figure-html/GAM-tumor-plot-1.png" width="576" style="display: block; margin: auto auto auto 0;" /&gt;
+&lt;img src="BMEG_TGIF_AM_slides_files/figure-html/GAM-tumor-plot-1.png" width="576" style="display: block; margin: auto auto auto 0;" /&gt;
 ]
 
 .pull-right[
 - Comparisons are not guided by a _p-value_, but the comparison actually makes sense!
-
---
 
 - Compute difference between smooths, construct confidence interval (95%) around difference
 ]
@@ -411,7 +409,7 @@ class: center
 # Acknowledgements
 
 .left-col[
-**Translational Biophotonics and Imaging Laboratory** &lt;br&gt;
+**Translational Biophotonics and Imaging Laboratory** &lt;br&gt;&lt;br&gt;
 Dr. Timothy J. Muldoon &lt;br&gt; 
 Shelby Bess &lt;br&gt;
 Kathryn Priest &lt;br&gt;
