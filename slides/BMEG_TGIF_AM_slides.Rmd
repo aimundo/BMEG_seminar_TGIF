@@ -89,6 +89,10 @@ class: title-slide, right, top
 **`r rmarkdown::metadata$author`**<br>
 <br>
 `r rmarkdown::metadata$institute` <br><br>
+<br>
+**BMEG 5810**
+<br>
+<br>
 `r rmarkdown::metadata$date`
 ]
 
@@ -104,29 +108,24 @@ layout: true
 ---
 
 class: center
-This talk is based on work from our lab. Preprint is available in _bioRxiv_ <br>
-https://doi.org/10.1101/2021.06.10.447970 
-
---
 
 ![:scale 40%](img/preprint.png)
 
 --
 
+Preprint is available in _bioRxiv_ <br>
+https://doi.org/10.1101/2021.06.10.447970 
+
+
+--
+.blue[
  **Limitations of linear models**<br>
  **Theory of GAMs** <br>
  **Workflow for GAM selection in R using biomedical data** <br>
-
+]
 
 **An updated version of the preprint can be found at the GitHub repo:**<br>
 https://github.com/aimundo/GAMs-biomedical-research <br>
-
---
-
-<br>
-The slides of this talk are available at <br>
-[tinyurl.com/2p88nk7w](https://tinyurl.com/2p88nk7w)
-
 
 ---
 
