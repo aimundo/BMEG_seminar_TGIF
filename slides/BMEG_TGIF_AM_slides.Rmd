@@ -104,29 +104,6 @@ layout: true
 
 <!-- this adds the link footer to all slides, depends on footer-link class in css-->
 
-
----
-
-class: center
-
-![:scale 40%](img/preprint.png)
-
---
-
-Preprint is available in _bioRxiv_ <br>
-https://doi.org/10.1101/2021.06.10.447970 
-
-
---
-.blue[
- **Limitations of linear models**<br>
- **Theory of GAMs** <br>
- **Workflow for GAM selection in R using biomedical data** <br>
-]
-
-**An updated version of the preprint can be found at the GitHub repo:**<br>
-https://github.com/aimundo/GAMs-biomedical-research <br>
-
 ---
 
 # Motivation
@@ -846,6 +823,29 @@ c1
 
 --
 - .red[_p-values_] can be misleading! 
+
+---
+
+class: center
+
+![:scale 40%](img/preprint.png)
+
+--
+
+Preprint is available in _bioRxiv_ <br>
+https://doi.org/10.1101/2021.06.10.447970 
+
+
+--
+.blue[
+ **Limitations of linear models**<br>
+ **Theory of GAMs** <br>
+ **Workflow for GAM selection in R using biomedical data** <br>
+]
+
+**An updated version of the preprint can be found at the GitHub repo:**<br>
+https://github.com/aimundo/GAMs-biomedical-research <br>
+
 
 ---
 

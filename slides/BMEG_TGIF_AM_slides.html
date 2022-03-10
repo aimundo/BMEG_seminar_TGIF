@@ -65,29 +65,6 @@ layout: true
 
 &lt;!-- this adds the link footer to all slides, depends on footer-link class in css--&gt;
 
-
----
-
-class: center
-
-![:scale 40%](img/preprint.png)
-
---
-
-Preprint is available in _bioRxiv_ &lt;br&gt;
-https://doi.org/10.1101/2021.06.10.447970 
-
-
---
-.blue[
- **Limitations of linear models**&lt;br&gt;
- **Theory of GAMs** &lt;br&gt;
- **Workflow for GAM selection in R using biomedical data** &lt;br&gt;
-]
-
-**An updated version of the preprint can be found at the GitHub repo:**&lt;br&gt;
-https://github.com/aimundo/GAMs-biomedical-research &lt;br&gt;
-
 ---
 
 # Motivation
@@ -199,8 +176,8 @@ contrast(a)
 
 ```
 ##  contrast      estimate   SE  df t.ratio p.value
-##  7.5 T1 effect     66.4 2.98 316  22.314  &lt;.0001
-##  7.5 T2 effect    -66.4 2.98 316 -22.314  &lt;.0001
+##  7.5 T1 effect     66.4 2.98 316  22.314 &lt;.0001 
+##  7.5 T2 effect    -66.4 2.98 316 -22.314 &lt;.0001 
 ## 
 ## P value adjustment: fdr method for 2 tests
 ```
@@ -412,6 +389,29 @@ gam1 &lt;- gam(Vol_sim ~ Group+s(Day, by = Group, k = 10),
 
 --
 - .red[_p-values_] can be misleading! 
+
+---
+
+class: center
+
+![:scale 40%](img/preprint.png)
+
+--
+
+Preprint is available in _bioRxiv_ &lt;br&gt;
+https://doi.org/10.1101/2021.06.10.447970 
+
+
+--
+.blue[
+ **Limitations of linear models**&lt;br&gt;
+ **Theory of GAMs** &lt;br&gt;
+ **Workflow for GAM selection in R using biomedical data** &lt;br&gt;
+]
+
+**An updated version of the preprint can be found at the GitHub repo:**&lt;br&gt;
+https://github.com/aimundo/GAMs-biomedical-research &lt;br&gt;
+
 
 ---
 
