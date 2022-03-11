@@ -347,6 +347,9 @@ $\beta_1, \beta_2$ and $\beta_3$: linear slopes of the fixed effects. </br>
 --
 $\varepsilon_{ijt}$: random variation not explained by the fixed effects, assumed to be $\sim N(0,\sigma^2)$</br>
 
+--
+
+A LMEM follows the same exact structure, only incorporates a random effect $\alpha_{ij}$, which allows for different intercepts.
 
 ---
 
@@ -398,6 +401,35 @@ _Vishwanath et. al. 2009_
 
 
 ---
+
+# Why does this matter?
+
+.pull-left[
+You can fit a rm-ANOVA or a LMEM to data with non-linear trends and get "significant" _p-values_.
+<br>
+.green["Type III Error": Model misspecification
+]
+
+But in such case you are getting biased estimates.
+
+<br>
+How confident can we be of our estimates? 
+<br>
+<br>
+]
+
+--
+.pull-right[
+![:scale 90%](img/computer.gif)
+]
+
+
+--
+.center[
+## Can we do better?
+]
+
+---
 # An alternative: Generalized additive models (GAMs)
 <br>
 <br>
@@ -408,11 +440,16 @@ _Vishwanath et. al. 2009_
 \end{equation}
 
 --
-<br>
-<br>
-<br>
 
-The change of $y_{ijt}$ over time is represented by the _smooth function_ $f(time_t\mid \beta_j)$ with inputs as the covariates $time_t$ and parameters $\beta_j$ <br>
+The change of $y_{ijt}$ over time is represented by the _smooth function_ $f(time_t\mid \beta_j)$ with inputs as the covariates $time_t$ and parameters $\beta_j$. 
+
+--
+
+We can use a _basis function_ to estimate the smooth function.
+
+--
+
+Splines are helpful as basis functions: Thin plate regression splines (TPRS) are computationally efficient, and the underlying principle is that of polynomial pieces "joined" together
 
 
 ---
@@ -612,6 +649,15 @@ gam1 <- gam(Vol_sim ~ Group+s(Day, by = Group, k = 10),
           data  = dat_sim)
 
 ```
+
+`Vol_sim`= Tumor volume
+`Group`= We have a parametric term for each group
+`s(Day)`= Independent smooths for each day, within each group
+
+--
+
+We will use 10 basis functions to construct the smooth
+
 ]
 
 .panel[.panel-name[Plot]
@@ -837,7 +883,7 @@ https://doi.org/10.1101/2021.06.10.447970
 
 
 --
-.blue[
+.green[
  **Limitations of linear models**<br>
  **Theory of GAMs** <br>
  **Workflow for GAM selection in R using biomedical data** <br>

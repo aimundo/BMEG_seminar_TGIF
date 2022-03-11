@@ -223,6 +223,9 @@ y_{ijt} = \beta_0+\beta_1 \times treatment_{j} +\beta_2 \times time_{t} +\beta_3
 --
 `\(\varepsilon_{ijt}\)`: random variation not explained by the fixed effects, assumed to be `\(\sim N(0,\sigma^2)\)`&lt;/br&gt;
 
+--
+
+A LMEM follows the same exact structure, only incorporates a random effect `\(\alpha_{ij}\)`, which allows for different intercepts.
 
 ---
 
@@ -274,6 +277,35 @@ _Vishwanath et. al. 2009_
 
 
 ---
+
+# Why does this matter?
+
+.pull-left[
+You can fit a rm-ANOVA or a LMEM to data with non-linear trends and get "significant" _p-values_.
+&lt;br&gt;
+.green["Type III Error": Model misspecification
+]
+
+But in such case you are getting biased estimates.
+
+&lt;br&gt;
+How confident can we be of our estimates? 
+&lt;br&gt;
+&lt;br&gt;
+]
+
+--
+.pull-right[
+![:scale 90%](img/computer.gif)
+]
+
+
+--
+.center[
+## Can we do better?
+]
+
+---
 # An alternative: Generalized additive models (GAMs)
 &lt;br&gt;
 &lt;br&gt;
@@ -284,11 +316,16 @@ _Vishwanath et. al. 2009_
 \end{equation}`
 
 --
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
 
-The change of `\(y_{ijt}\)` over time is represented by the _smooth function_ `\(f(time_t\mid \beta_j)\)` with inputs as the covariates `\(time_t\)` and parameters `\(\beta_j\)` &lt;br&gt;
+The change of `\(y_{ijt}\)` over time is represented by the _smooth function_ `\(f(time_t\mid \beta_j)\)` with inputs as the covariates `\(time_t\)` and parameters `\(\beta_j\)`. 
+
+--
+
+We can use a _basis function_ to estimate the smooth function.
+
+--
+
+Splines are helpful as basis functions: Thin plate regression splines (TPRS) are computationally efficient, and the underlying principle is that of polynomial pieces "joined" together
 
 
 ---
@@ -308,6 +345,15 @@ gam1 &lt;- gam(Vol_sim ~ Group+s(Day, by = Group, k = 10),
           method='REML',
           data  = dat_sim)
 ```
+
+`Vol_sim`= Tumor volume
+`Group`= We have a parametric term for each group
+`s(Day)`= Independent smooths for each day, within each group
+
+--
+
+We will use 10 basis functions to construct the smooth
+
 ]
 
 .panel[.panel-name[Plot]
@@ -403,7 +449,7 @@ https://doi.org/10.1101/2021.06.10.447970
 
 
 --
-.blue[
+.green[
  **Limitations of linear models**&lt;br&gt;
  **Theory of GAMs** &lt;br&gt;
  **Workflow for GAM selection in R using biomedical data** &lt;br&gt;
