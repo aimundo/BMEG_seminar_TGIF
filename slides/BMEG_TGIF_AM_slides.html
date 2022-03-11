@@ -221,7 +221,7 @@ y_{ijt} = \beta_0+\beta_1 \times treatment_{j} +\beta_2 \times time_{t} +\beta_3
 `\(\beta_1, \beta_2\)` and `\(\beta_3\)`: linear slopes of the fixed effects. &lt;/br&gt; 
  
 --
-`\(\varepsilon_{ijt}\)`: random variation not explained by the fixed effects, assumed to be `\(\sim N(0,\sigma^2)\)`&lt;/br&gt;
+`\(\varepsilon_{ijt}\)`: error, assumed to be `\(\sim N(0,\sigma^2)\)`&lt;/br&gt;
 
 --
 
@@ -259,20 +259,22 @@ _Batis et. al. 2013_
 ---
 
 # Some examples
-.pull-left[
+
+.center[
 ![:scale 50%](img/Skala.jpg)
 ]
 .footnote[
 _Skala et. al. 2010_
 ]
 
---
+---
 
-.pull-right[
-![:scale 80%](img/Vishwanath.jpg)
+# Some examples
+.center[
+![:scale 60%](img/Vishwanath.jpg)
+]
 .footnote[
 _Vishwanath et. al. 2009_
-]
 ]
 
 
@@ -346,20 +348,27 @@ gam1 &lt;- gam(Vol_sim ~ Group+s(Day, by = Group, k = 10),
           data  = dat_sim)
 ```
 
-`Vol_sim`= Tumor volume
-`Group`= We have a parametric term for each group
+`Vol_sim`= Tumor volume &lt;br&gt;
+`Group`= We have a parametric term for each group &lt;br&gt;
 `s(Day)`= Independent smooths for each day, within each group
+&lt;br&gt;
 
---
-
-We will use 10 basis functions to construct the smooth
+We will use 10 basis functions to construct the smooth (`k=10`)
 
 ]
 
 .panel[.panel-name[Plot]
-
+.pull-left[
 &lt;img src="BMEG_TGIF_AM_slides_files/figure-html/GAM-plot-1.png" width="504" style="display: block; margin: auto;" /&gt;
+]
 
+.pull-right[
+
+- Lines are the fitted smooths &lt;br&gt;
+- Shaded regions are the 95% pointwise confidence interval &lt;br&gt;
+- The **data** dictates the fit of the model
+
+]
 ]
 
 .panel[.panel-name[Pairwise comp.]

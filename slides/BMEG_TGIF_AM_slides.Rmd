@@ -345,7 +345,7 @@ $time_t$, $treatment_j$: fixed effects  </br>
 $\beta_1, \beta_2$ and $\beta_3$: linear slopes of the fixed effects. </br> 
  
 --
-$\varepsilon_{ijt}$: random variation not explained by the fixed effects, assumed to be $\sim N(0,\sigma^2)$</br>
+$\varepsilon_{ijt}$: error, assumed to be $\sim N(0,\sigma^2)$</br>
 
 --
 
@@ -383,20 +383,22 @@ _Batis et. al. 2013_
 ---
 
 # Some examples
-.pull-left[
+
+.center[
 ![:scale 50%](img/Skala.jpg)
 ]
 .footnote[
 _Skala et. al. 2010_
 ]
 
---
+---
 
-.pull-right[
-![:scale 80%](img/Vishwanath.jpg)
+# Some examples
+.center[
+![:scale 60%](img/Vishwanath.jpg)
+]
 .footnote[
 _Vishwanath et. al. 2009_
-]
 ]
 
 
@@ -650,18 +652,17 @@ gam1 <- gam(Vol_sim ~ Group+s(Day, by = Group, k = 10),
 
 ```
 
-`Vol_sim`= Tumor volume
-`Group`= We have a parametric term for each group
+`Vol_sim`= Tumor volume <br>
+`Group`= We have a parametric term for each group <br>
 `s(Day)`= Independent smooths for each day, within each group
+<br>
 
---
-
-We will use 10 basis functions to construct the smooth
+We will use 10 basis functions to construct the smooth (`k=10`)
 
 ]
 
 .panel[.panel-name[Plot]
-
+.pull-left[
 ```{r,GAM-plot,echo=FALSE,fig.width=7,fig.height=5,fig.align='center'}
 #creates a dataframe using the length of the covariates for the GAM
 gam_predict <- expand_grid(Group = factor(c("T1", "T2")),
@@ -699,7 +700,15 @@ f3<-ggplot(data=dat_sim, aes(x=Day, y=Vol_sim, group=Group)) +
 
 f3
 ```
+]
 
+.pull-right[
+
+- Lines are the fitted smooths <br>
+- Shaded regions are the 95% pointwise confidence interval <br>
+- The **data** dictates the fit of the model
+
+]
 ]
 
 .panel[.panel-name[Pairwise comp.]
