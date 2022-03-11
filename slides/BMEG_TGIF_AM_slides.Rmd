@@ -704,8 +704,8 @@ f3
 
 .pull-right[
 
-- Lines are the fitted smooths <br>
-- Shaded regions are the 95% pointwise confidence interval <br>
+- Lines are the fitted smooths <br> <br>
+- Shaded regions are the 95% pointwise confidence interval <br> <br>
 - The **data** dictates the fit of the model
 
 ]
